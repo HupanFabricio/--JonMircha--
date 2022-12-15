@@ -31,12 +31,41 @@ const initialSimpson = [
 ]
 
 const CrudApp = () => {
-  const [sm, setSm] = useState(initialSimpson)
+
+  const [sm, setSm] = useState(initialSimpson);
+
+  const [dataToEdit, setDataToEdit] = useState(null);
+
+  const createData = (data) => { 
+    data.id = Date.now();
+    // console.log(data);
+    setSm([...sm,data])
+  };
+
+  const upData = (data) => { 
+    let newData= sm.map(el => el.id === data.id? data:el );
+    setSm(newData);
+  };
+
+  const deleteData = (id) => { };
+
   return (
     <div>
       <h2>CRUD APP</h2>
-      <CrudForm />
-      <CrudTable data={sm} />
+
+      <CrudForm
+        createData={createData}
+        upData={upData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
+      />
+
+      <CrudTable
+        data={sm}
+        deleteData={deleteData}
+        setDataToEdit={setDataToEdit}
+      />
+
     </div>
   )
 }
