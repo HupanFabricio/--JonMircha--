@@ -2,37 +2,9 @@ import React, { useState, useEffect } from 'react';
 import CrudForm from './CrudForm'
 import CrudTable from './CrudTable'
 
-const initialSimpson = [
-  {
-    id: 1,
-    name: "Homero",
-    role: "Dad"
-  },
-  {
-    id: 2,
-    name: "Marge",
-    role: "Mother"
-  },
-  {
-    id: 3,
-    name: "Bart",
-    role: "Sons"
-  },
-  {
-    id: 4,
-    name: "Lisa",
-    role: "Sons"
-  },
-  {
-    id: 5,
-    name: "Milhause",
-    role: "Neighbours"
-  },
-]
+const CrudApi = () => {
 
-const CrudApp = () => {
-
-  const [sm, setSm] = useState(initialSimpson);
+  const [sm, setSm] = useState([]);
 
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -81,4 +53,4 @@ const CrudApp = () => {
     </div>
   )
 }
-export default CrudApp;
+export default CrudApi;

@@ -1,0 +1,29 @@
+{
+    "Personajes":[
+        {
+        "id": 1,
+        "name": "Homero",
+        "role": "Dad"
+        },
+        {
+        "id": 2,
+        "name": "Marge",
+        "role": "Mother"
+        },
+        {
+        "id": 3,
+        "name": "Bart",
+        "role": "Sons"
+        },
+        {
+        "id": 4,
+        "name": "Lisa",
+        "role": "Sons"
+        },
+        {
+        "id": 5,
+        "name": "Milhause",
+        "role": "Neighbours"
+        }
+    ]
+}
