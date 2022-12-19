@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { helpHttp } from '../helpHttp/helpHttp';
 import CrudForm from './CrudForm'
 import CrudTable from './CrudTable'
 
 const CrudApi = () => {
 
   const [sm, setSm] = useState([]);
-
   const [dataToEdit, setDataToEdit] = useState(null);
+
+  const api = helpHttp();
+  const url = "http://localhost:5000/Personajes";
+
+  useEffect(() => {
+    api.get(url).then(res => { console.log(res) })
+  }, [])
 
   const createData = (data) => {
     data.id = Date.now();
@@ -33,7 +40,7 @@ const CrudApi = () => {
 
   return (
     <div>
-      <h2>CRUD APP</h2>
+      <h2>CRUD Api</h2>
       <article className="grid-1-2">
 
         <CrudForm
